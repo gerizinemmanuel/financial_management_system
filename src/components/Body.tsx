@@ -22,6 +22,12 @@ const Body = () => {
     setCurrentMonth(newMonth);
   };
 
+  const handleAddItem = (item: Item) => {
+    const newList = list;
+    newList.push(item);
+    setList(newList)
+  }
+
   useEffect(() => {
     let totalIncome = 0;
     let totalExpense = 0;
@@ -55,7 +61,7 @@ const Body = () => {
         expense={expense}
       />
       <TableArea list={filteredList} />
-      <FormArea categories={categories} />
+      <FormArea categories={categories} addItem={handleAddItem}/>
     </div>
   );
 };
