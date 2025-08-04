@@ -1,12 +1,24 @@
-type Props = {
-    type?: string;
-    placeholder?: string;
-    value?: string;
-    id?: string;
-}
+import React from "react";
 
-const Input = ({type, placeholder, value, id}:Props) => {
-    return <input type={type? type: "text"} placeholder={placeholder} value={value} id={id} className="bg-gray-200 rounded-[8px] h-10 px-1.5" />
-}
+type Props = {
+  type?: string;
+  placeholder?: string;
+  value?: string;
+  id?: string;
+  onChange?: (e: React.ChangeEvent<HTMLInputElement>) => void;
+};
+
+const Input = ({ type, placeholder, value, id, onChange }: Props) => {
+  return (
+    <input
+      type={type ? type : "text"}
+      placeholder={placeholder}
+      value={value}
+      id={id}
+      className="bg-gray-200 rounded-[8px] h-10 px-3"
+      onChange={onChange}
+    />
+  );
+};
 
 export default Input;

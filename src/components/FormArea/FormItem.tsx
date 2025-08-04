@@ -1,13 +1,11 @@
-import type {ReactNode} from "react"
+import type { ReactNode } from "react";
 
 type Props = {
-    children: ReactNode;
-}
+  children: ReactNode;
+};
 
-const FormItem = ({children}:Props)=>{
-    return <div className="flex flex-col gap-1">
-        {children}
-    </div>
-}
+const FormItem = ({ children }: Props) => {
+  return <div className="flex flex-col gap-1">{children}</div>;
+};
 
 export default FormItem;
