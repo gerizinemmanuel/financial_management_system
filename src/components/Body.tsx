@@ -23,10 +23,8 @@ const Body = () => {
   };
 
   const handleAddItem = (item: Item) => {
-    const newList = list;
-    newList.push(item);
-    setList(newList)
-  }
+    setList([...list, item]);
+  };
 
   useEffect(() => {
     let totalIncome = 0;
@@ -38,6 +36,7 @@ const Body = () => {
     setIncome(totalIncome);
     setExpense(totalExpense);
   }, []);
+
   useEffect(() => {
     let totalIncome = 0;
     let totalExpense = 0;
@@ -48,6 +47,7 @@ const Body = () => {
     setIncome(totalIncome);
     setExpense(totalExpense);
   }, [filteredList]);
+
   useEffect(() => {
     setFilteredList(filterListByMonth(list, currentMonth));
   }, [list, currentMonth]);
@@ -61,7 +61,7 @@ const Body = () => {
         expense={expense}
       />
       <TableArea list={filteredList} />
-      <FormArea categories={categories} addItem={handleAddItem}/>
+      <FormArea categories={categories} addItem={handleAddItem} />
     </div>
   );
 };

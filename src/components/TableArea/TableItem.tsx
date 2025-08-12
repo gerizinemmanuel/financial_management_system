@@ -10,7 +10,6 @@ type Props = {
 
 const TableItem = ({ item }: Props) => {
   const bgCategory = `${categories[item.category].color}`;
-  console.log(bgCategory);
   return (
     <tr>
       <TableColumn>{formatDate(item.date)}</TableColumn>

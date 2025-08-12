@@ -20,7 +20,7 @@ const TableArea = ({ list }: Props) => {
         </thead>
         <tbody>
           {list.map((item) => {
-            return <TableItem item={item} key={list.indexOf(item)} />;
+            return <TableItem item={item} key={item.id} />;
           })}
         </tbody>
       </table>
